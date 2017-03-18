@@ -1,7 +1,0 @@
-<!-- 头部 -->
-<div id="framecontentTop">
-    <div class="header">
-        <span ><img id="img1" src="images/common/back.png" alt=""></span>
-        <span class="title" ng-controller="indexCtrl">{{title}}</span>
-    </div>
-</div>

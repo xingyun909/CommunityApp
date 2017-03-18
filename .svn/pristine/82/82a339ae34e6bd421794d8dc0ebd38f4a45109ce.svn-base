@@ -1,9 +1,0 @@
-<link href="css/suggest.css" rel="stylesheet">
-<div class="text">
-    如果您在使用智慧社区的过程中遇到任何问题，请留下您宝贵的建议和联系方式，我们会及时的与您取得联系：
-</div>
-<frame action="#" method="">
-    <textarea id="tarea" placeholder="请至少输入10个字的意见反馈"/>
-    <input type="text" id="ph" placeholder="请留下您的手机号码/邮箱"/>
-    <input type="submit" value="确认提交" id="btn"/>
-</frame>
