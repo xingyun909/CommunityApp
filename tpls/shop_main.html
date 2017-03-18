@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>这区主页</title>
+    <link rel="stylesheet" type="text/css" href="css/shop_main.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/swipe.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/maincontent.css">
+    <link rel="stylesheet" href="css/bottom.css">
+    <link rel="stylesheet" href="css/common.css">
+    <script type="text/javascript" src="lib/jquery.min.js"></script>
+    <script type="text/javascript" src="lib/jquery.simplesidebar.js"></script>
+    <script src="js/shop_main.js" charset="utf-8"></script>
+</head>
+
+<body>
+    <div>
+        <!-- 头部 -->
+        <div id="framecontentTop">
+            <div class="header">
+              <a ui-sref="index"><img id="img1" src="images/common/back.png" alt=""></a>
+              <span class="title">迦南小区24栋</span>
+                <div class="triangle"></div>
+            </div>
+        </div>
+        <!-- 内容 -->
+        <div id="maincontent" >
+            <div class="addWrap">
+                <div class="swipe" id="mySwipe">
+                    <div class="swipe-wrap">
+                        <div>
+                            <a href="javascript:;"><img class="img-responsive" src="images/shop_main/4.jpg" /></a>
+                        </div>
+                        <div>
+                            <a href="javascript:;"><img class="img-responsive" src="images/shop_main/5.jpg" /></a>
+                        </div>
+                        <div>
+                            <a href="javascript:;"><img class="img-responsive" src="images/shop_main/6.jpg" /></a>
+                        </div>
+                    </div>
+                </div>
+                <ul id="position">
+                    <li class="cur"></li>
+                    <li class=""></li>
+                    <li class=""></li>
+                </ul>
+            </div>
+            <div class="maincontent-title clearfix">
+                <div class="fl catalogue half">
+                    <span class="span">分类</span>
+                    <img src="images/shop_main/down.png" alt="" />
+                </div>
+                <div class="fl ranking half">
+                    <span class="span">排行</span>
+                    <img src="images/shop_main/down.png" alt="" />
+                </div>
+            </div>
+            <!-- 分类 -->
+            <div  id="ranking-msg" class="classified">
+                <div class="list">
+                    <img src="images/shop_main/uprow.png" alt="" /><span>销量最高</span>
+                    <div class="fr">
+                        <img src="images/shop_main/对号.png" alt="" />
+                    </div>
+                </div>
+                <div class="list">
+                    <img src="images/shop_main/star.png" alt="" /><span>活动商家</span>
+                </div>
+                <div class="list">
+                    <img src="images/shop_main/footprint.png" alt="" /><span>配送费最低</span>
+                </div>
+            </div>
+            <!-- 排行 -->
+            <div id="catalogue-msg" class="classified">
+                <div class="list">
+                    <img src="images/shop_main/all.png" alt="" /><span>全部</span>
+                    <div class="fr">
+                        <img src="images/shop_main/对号.png" alt="" />
+                    </div>
+                </div>
+                <div class="list">
+                    <img src="images/shop_main/shop.png" alt="" /><span>超市</span>
+                </div>
+                <div class="list">
+                    <img src="images/shop_main/fruit.png" alt="" /><span>水果</span>
+                </div>
+                <div class="list">
+                    <img src="images/shop_main/canyin.png" alt="" /><span>餐饮</span>
+                </div>
+            </div>  
+            <!-- 商店列表 -->
+            <div class="shop"   ng-controller="ShopListCtrl">
+                <!-- li -->
+                <div class="shop-item clearfix " ng-repeat="shop in shopData">
+                    <div class="item-style list" >
+                        <div class="image fl">
+                            <img ng-src={{shop.shopImg}} alt="" />
+                        </div>
+                        <div class="detail fr ">
+                            <div class="clearfix">
+                                <p class="fl title">{{shop.shopName}}</p>
+                                <p class="fr "><span>￥{{shop.qiSong}}</span>起送</p>
+                            </div>
+                            <div class="clearfix">
+                                <p class="fl">月销售{{shop.monthlySales}}单</p>
+                                <p class="fr"><span>￥{{shop.peiSong}}</span>配送费</p>
+                            </div>
+                            <div class="discount">
+                                <div class="fl">
+                                    <img src="images/shop_main/折.png" alt="" />
+                                </div>
+                                <p>{{shop.activity}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- li -->
+
+            </div>
+        </div>
+        <!-- 底部 -->
+        <div id="framecontentBottom">
+            <div class="footer ">
+                <div class="col-xs-12 ">
+                    <a ui-sref="index" class="col-xs-4"><img src="images/shop_main/icon_home.png" alt="" />
+                        <p class="p">主页</p>
+                    </a>
+                    <a ui-sref="shop_main" class="col-xs-4"><img src="images/shop_main/icon_around.png" alt="" />
+                        <p>周边</p>
+                    </a>
+                    <a ui-sref="personal" class="col-xs-4"><img src="images/shop_main/icon_me.png" alt="" />
+                        <p>我的</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+</body>
+<script src="js/swipe.js"></script>
+<script type="text/javascript">
+var bullets = document.getElementById('position').getElementsByTagName('li');
+var banner = Swipe(document.getElementById('mySwipe'), {
+    auto: 2000,
+    continuous: true,
+    disableScroll: false,
+    callback: function(pos) {
+        var i = bullets.length;
+        while (i--) {
+            bullets[i].className = ' ';
+        }
+        bullets[pos].className = 'cur';
+    }
+});
+</script>
+
+</html>

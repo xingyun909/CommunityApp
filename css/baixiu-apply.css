@@ -1,0 +1,92 @@
+@charset "UTF-8";
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f1f6fb;
+}
+
+.topic {
+    background-color: #2b8de5;
+    height: 55px;
+    width: 100%;
+    position: relative;
+}
+
+.topic img {
+    float: left;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    height: 30px;
+    width: 30px;
+}
+
+.topic p {
+    text-align: center;
+    font-size: 22px;
+    line-height: 55px;
+    font-family: Microsoft YaHei, sans-serif;
+    color: #ffffff;
+}
+
+.deta {
+    margin: 23px;
+}
+
+span {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.deta input {
+    width: 65%;
+    height: 35px;
+    border: 1px solid #d2d2d2;
+}
+
+.deta textarea {
+    width: 65%;
+    height: 85px;
+    border: 1px solid #d2d2d2;
+    vertical-align: top;
+}
+
+#pic img {
+    height: 160px;
+    width: 235px;
+    margin: 20px 75px;
+}
+
+.footer {
+    height: 90px;
+    width: 100%;
+    background: white;
+    padding: 18px 25px;
+}
+
+#addre {
+    margin-top: 6px;
+    width: 90%;
+    border-top: 1px solid #e5e5e5;
+}
+
+#addre p {
+    font-size: 18px;
+    margin: 6px;
+    font-family: Microsoft YaHei, sans-serif;
+}
+
+.btn {
+    width: 200px;
+    height: 35px;
+    color: white;
+    background: #2b8de5;
+    border: 0px;
+    border-radius: 5px;
+    margin: 50px 100px;
+    font-size: 20px;
+    font-family: Microsoft YaHei, sans-serif;
+}

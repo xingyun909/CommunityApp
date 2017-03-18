@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>社区公告</title>
+    <link rel="stylesheet" type="text/css" href="css/noticeA.css" />
+
+</head>
+
+<body>
+    <div class="header">
+        <!-- <div class="top"></div> -->
+        <div class="topic">
+            <a href="#"><img src="images/baoxiu/return-icon.png" alt="" /></a>
+            <p>社区公告</p>
+        </div>
+    </div>
+        <!-- 内容 -->
+        <div id="maincontent" class="container"  ng-controller="announceCtrl">
+            <form action="index.html" method="GET" ng-repeat="x in announce">
+                <a ng-click="deliver($index)" ui-sref="noticeC" >
+                <table>
+                    <tr>
+                        <td rowspan="2" class="announcephoto"><img class="" src="{{x.img}}"/></td>
+                        <td class="announcetitle" >{{x.title}}</td>
+                    </tr>
+                    <tr>
+                        <td class="date" >{{x.dateTime}}</td>
+                    </tr>
+                </table>
+                </a>
+            </form>
+        </div>
+
+</body>
+
+</html>

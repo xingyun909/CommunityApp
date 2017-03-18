@@ -1,0 +1,13 @@
+<link rel="stylesheet" href="css/setup.css">
+<div class="mainbottom">
+ <form action="" method="">
+   <ul class="list">
+     <li class="a">是否推送消息 <label><input class="mui-switch" type="checkbox"></label></li>
+     <li class="c"></li>
+     <li class="a">检测更新</li>
+     <li class="a">清除缓存</li>
+     <li class="a">关于</li>
+     <li class="a">退出账号</li>
+   </ul>
+ </form> 
+</div>

@@ -1,0 +1,14 @@
+.imagejx{
+    height:150px;
+    margin:10px auto;
+    display:block;
+    width:100%;
+    margin-bottom:0px;
+}
+.datejx{
+    font-size:15px;
+    color:grey;
+}
+.classjx{
+    font-size:20px;    
+}

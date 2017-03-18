@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>提交订单</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"></meta>
+<link href="css/dingdan.css" rel="stylesheet">
+<script src="lib/jquery-2.1.4.min.js" type="text/javascript"></script>
+<script src="js/dingdan.js" type="text/javascript"></script>
+</head>
+<body>
+    <div class="header">
+        <div class="topic">
+            <a href="#"><img src="images/dingdan/back.jpg" alt=""/></a>
+            <p>提交订单</p>
+        </div>
+    </div>
+
+    <div>
+        <ul id="list">
+            <li class="shop">二哥超市</li>
+            <li class="goods">
+                小浣熊方便面
+                <span class="pri">
+                    <img src="images/dingdan/minus.png" class="min"/>
+                    <label class="num">1</label>
+                    <img src="images/dingdan/add.png" class="add"/>
+                    ￥<span class="price">8</span>
+                </span>
+            </li>
+            <li class="goods">
+                雪碧600ML
+                <span class="pri">
+                    <img src="images/dingdan/minus.png" class="min"/>
+                    <label class="num">1</label>
+                    <img src="images/dingdan/add.png" class="add"/>
+                    ￥<span class="price">3</span>
+                </span>
+            </li>
+            <li class="disc"> 
+                <img src="images/dingdan/discount.jpg"> 购买10元以上，立减2元
+                <span class="pri redpri">-￥<span class="dis_p">2</span></span>
+            </li>
+            <li class="deliver">
+                配送费
+                <span class="pri">￥7</span>
+            </li>
+            <li class="total">
+                订单
+                ￥<label id="total_pri"></label>
+                 - 优惠￥2.00
+                <span class="pri redpri">
+                    总计：￥<label class="total_fin"></label>
+                </span> 
+            </li>
+        </ul>
+    </div>
+    <div class="address">
+        <span>收货地址</span>
+            <div id="addre">
+                <p>万达小区 &nbsp #26栋 &nbsp 604室</p>
+                <p>王刚先生 &nbsp 10016341859</p>
+            </div>
+    </div>
+    <div class="footer">
+        货到付款：￥<label class="total_fin" style="font-size:24px" ></label>
+        <span id="footer_r">还差￥5元起送</span>
+    </div>
+</body>
+</html>

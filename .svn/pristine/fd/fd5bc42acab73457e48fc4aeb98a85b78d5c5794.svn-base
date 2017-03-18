@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>个人中心</title>
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/maincontent.css">
+    <link rel="stylesheet" href="css/bottom.css">
+    <link rel="stylesheet" href="css/personal.css">
+    <script src="lib/jquery-2.1.4.min.js"></script>
+</head>
+
+<body ng-controller="personalCtrl">
+    <!-- 头部 -->
+    <div id="framecontentTop">
+        <div class="header">
+            <a ui-sref="index"><img id="img1" src="images/common/back.png" alt=""></a>
+            <span class="title">个人中心</span>
+            <div class="triangle"></div>
+        </div>
+    </div>
+    <!-- 内容 -->
+    <div id="maincontent">
+        <div class="maintop">
+            <div id="pimg">
+                <label for="picture"><img src="images/baoxiu/addpic.jpg" /></label>
+                <input type="file" id="picture" name="picture" style="display:none">
+            </div>
+            <div id="ptext">
+                于现东
+                <br/>
+                <br/> 万达小区 住户
+            </div>
+            <div id="pinto">
+                <a class="col-xs-4" id="myinto">
+                    <span style="font-size:65px;color:#a0a0a0">&gt;</span>
+                </a>
+            </div>
+        </div>
+        <div class="mainbottom">
+            <ul class="list">
+                <a class="col-xs-4">
+                    <li class=""><img src="images/personal/list1.png"> 我的订单</li>
+                </a>
+                <a ui-sref="baoxiu_history" class="col-xs-4">
+                    <li class=""><img src="images/personal/list2.png"> 历史报修</li>
+                </a>
+                <a ui-sref="shop_apply" class="col-xs-4">
+                    <li class=""><img src="images/personal/list3.png"> 申请开店</li>
+                </a>
+            </ul>
+            <div id="fenge"></div>
+            <ul class="list">
+                <a ui-sref="suggest" class="col-xs-4">
+                    <li class=""><img src="images/personal/list4.png"> 意见反馈</li>
+                </a>
+                <a ui-sref="setup" class="col-xs-4">
+                    <li class=""><img src="images/personal/list5.png"> 设置</li>
+                </a>
+            </ul>
+        </div>
+    </div>
+    <div id="framecontentBottom">
+        <div class="footer ">
+            <div class="col-xs-12 ">
+                <a ui-sref="index" class="col-xs-4"><img src="images/shop_main/icon_home.png" alt="" />
+                    <p class="p">主页</p>
+                </a>
+                <a ui-sref="shop_main" class="col-xs-4"><img src="images/shop_main/icon_around.png" alt="" />
+                    <p>周边</p>
+                </a>
+                <a ui-sref="personal" class="col-xs-4"><img src="images/shop_main/icon_me.png" alt="" />
+                    <p>我的</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

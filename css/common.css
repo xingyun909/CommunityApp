@@ -1,0 +1,83 @@
+
+/*通用*/
+body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fioldsot,table,td,img,div,dl,dt,dd,input{margin:0;padding:0}
+body{font-size:12px;}
+img{border:none;}
+li{list-style:none;}
+input,select,textarea{outline:none;}
+textarea{resize:none;}
+a{text-docoration:none;}
+
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+    clear: both;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.half {
+    width: 50%;
+
+}
+
+/*三角形状*/
+.triangle {
+    /*  margin: auto;
+            width: 30px;
+            height: 30px;*/
+    margin-top: 17px;
+    /*background-color: #2b8de5;*/
+    border: 10px solid;
+    border-color: white #2b8de5 #2b8de5 #2b8de5;
+}
+
+.triangle-color {
+    /*background-color: white;*/
+    border-color: #8b8989 white white white;
+}
+
+
+}
+.triangle-up {
+    margin: auto;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid red;
+}
+.triangle-down {
+    margin: auto;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 100px solid red;
+}
+.triangle-left {
+    margin: auto;
+    width: 0;
+    height: 0;
+    border-top: 50px solid transparent;
+    border-right: 100px solid red;
+    border-bottom: 50px solid transparent;
+}
+.triangle-right {
+    margin: auto;
+    width: 0;
+    height: 0;
+    border-top: 50px solid transparent;
+    border-left: 100px solid red;
+    border-bottom: 50px solid transparent;
+}
+/*三角形状*/

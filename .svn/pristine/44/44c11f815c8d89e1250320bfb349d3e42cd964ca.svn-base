@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>电商商铺</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"></meta>
+        <link rel="stylesheet" href="css/shop_subpage.css" type="text/css"/>
+        <script type="text/javascript" src="lib/jquery-2.1.4.min.js"></script>
+        <script type="text/javascript" src="lib/jquery.fly.min.js"></script>
+    </head>
+    <body>
+        <!-- 头部 -->
+        <div id="top">
+            <div class="header">
+                <a ui-sref="shop_main"><img id="imgl" src="images/common/back.png" alt=""></a>
+                <a href="tel:15846620491"><img id="imgr" src="images/shop_subpage/phone-icon.png" alt=""></a>
+                 <div id="shop-icon"><img  src="images/shop_subpage/timg.jpg" alt=""></div>
+                 <div id="shop-title">
+                    <p>二哥超市</p>
+                    <p class="font">¥10元起送/1元配送费</p>
+                    <p class="font"><span class="jian">减</span>满30立减20</p>
+                 </div>
+            </div>
+        </div>
+        <!-- 内容 -->
+        <div id="maincontent">
+            <div class="classification">
+                <h3>商品分类</h3>
+                <table>
+                    <tr>
+                        <td>肉类</td>
+                        <td>蔬菜</td>
+                        <td>水果</td>
+                    </tr>
+                    <tr>
+                        <td>饼干</td>
+                        <td>饮料</td>
+                        <td>蛋糕</td>
+                    </tr>
+                    <tr>
+                        <td>饼干</td>
+                        <td>饮料</td>
+                        <td>蛋糕</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="choiceness">
+                <h3>精选商品</h3>
+                <div class="commodity">
+                    <div class="picture"><img class="goods" src="images/shop_subpage/timg.jpg"></div>
+                    <p class="food1">统一方便面小浣熊香辣蟹味50g</p>
+                    <p class="sales">月售35份</p>
+                    <p class="price">&yen;1</p>
+                    <img class="addcar" src="images/shop_subpage/addition.png" alt=""/>
+                </div>
+                <div class="commodity">
+                    <div class="picture"></div>
+                    <p class="food1">统一方便面小浣熊香辣蟹味50g</p>
+                    <p class="sales">月售35份</p>
+                    <p class="price">&yen;1</p>
+                    <img class="addcar" src="images/shop_subpage/addition.png" alt=""/>
+                </div>
+                <div class="commodity">
+                    <div class="picture"></div>
+                    <p class="food1">统一方便面小浣熊香辣蟹味50g</p>
+                    <p class="sales">月售35份</p>
+                    <p class="price">&yen;1</p>
+                    <img class="addcar" src="images/shop_subpage/addition.png" alt=""/>
+                </div>
+                <div class="commodity">
+                    <div class="picture"></div>
+                    <p class="food1">统一方便面小浣熊香辣蟹味50g</p>
+                    <p class="sales">月售35份</p>
+                    <p class="price">&yen;1</p>
+                    <img class="addcar" src="images/shop_subpage/addition.png" alt=""/>
+                </div>
+                <div class="commodity">
+                    <div class="picture"></div>
+                    <p class="food1">统一方便面小浣熊香辣蟹味50g</p>
+                    <p class="sales">月售35份</p>
+                    <p class="price">&yen;1</p>
+                    <img class="addcar" src="images/shop_subpage/addition.png" alt=""/>
+                </div>
+                <div class="commodity">
+                    <div class="picture"></div>
+                    <p class="food1">统一方便面小浣熊香辣蟹味50g</p>
+                    <p class="sales">月售35份</p>
+                    <p class="price">&yen;1</p>
+                    <img class="addcar" src="images/shop_subpage/addition.png" alt=""/>
+                </div> 
+                <div class="commodity">
+                    <div class="picture"></div>
+                    <p class="food1">统一方便面小浣熊香辣蟹味50g</p>
+                    <p class="sales">月售35份</p>
+                    <p class="price">&yen;1</p>
+                    <img class="addcar" src="images/shop_subpage/addition.png" alt=""/>
+                </div>
+            </div>
+        </div>
+         <img id="end" src="images/shop_subpage/shopcar.png">
+    <span id="shopcarnum">0</span>
+    </div>
+   
+    <!-- 底部 -->
+</body>
+</html>

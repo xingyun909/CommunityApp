@@ -1,0 +1,30 @@
+
+/*底部*/
+#framecontentBottom {
+    position: absolute;
+    top: auto;
+    bottom: 0;
+    height: 60px;
+    width: 100%;
+    /*Height of bottom frame div*/
+    
+    overflow: hidden;
+    /*Disable scrollbars. Set to "scroll" to enable*/
+    
+    background-color: #f6f6f6;
+}
+.footer {
+    padding-top: 10px;
+}
+.footer a {
+    font-family: 微软雅黑 Bold;
+    display: inline-block;
+    height: 49px;
+    text-align: center;
+    text-decoration: none;
+    color: #989a9c;
+}
+.footer img {
+    width: 28px;
+    height: 26px;
+}

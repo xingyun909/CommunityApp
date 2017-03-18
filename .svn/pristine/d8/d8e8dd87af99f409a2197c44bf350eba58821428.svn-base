@@ -1,0 +1,82 @@
+body{
+  margin: 0;
+  padding: 0;
+  background-color: #f8f8f8;
+}
+.header{
+  margin-top: 1px;
+  background-color: #fff;
+  border-top: 1px solid #a0a0a0;
+  border-bottom: 1px solid #a0a0a0;
+}
+.back{
+  margin-left: 10px;
+  font-size: 26px;
+  float: left;
+}
+.title{
+  text-align: center;
+  line-height: 30px;
+}
+.body{
+  margin-top:20px;
+}
+.input{
+  border: 1px solid #a0a0a0;
+  width: 80%;
+  height: 42px;
+  margin: auto;
+  margin-bottom: 30px;
+  padding: 3px 13px;
+  background-color: #fff;
+}
+.input img{
+  height: 36px;
+  width: 22px;
+  float: left;
+  margin-top: 4px;
+}
+
+.input input{
+  margin-left: 17px;
+  height: 42px;
+  width: 80%;
+  border: 0;
+  outline: none;
+  font-size:17px;
+}
+
+#getCode{
+    float: right;
+    margin-left: 2px;
+    margin-top: 3px;
+    background-color: #fff;
+    border: 1px solid #eee;
+    padding: 10px 5px;
+    width: 110px;
+    color: #a0a0a0;
+}
+#msgcode{
+  width: 30%;
+}
+.button{
+  margin: auto;
+  margin-top: 200px;
+  width: 90%;
+  height: 50px;
+  background-color: #2b8de5;
+  text-align: center;
+  line-height: 50px;
+  color: #fff;
+}
+#login{
+  width: 90%;
+  margin: 0 auto;
+  height: 30px;
+  /*border: 1px solid #566;*/
+}
+#login a{
+  float: right;
+  padding: 4px;
+  text-decoration: none;
+}

@@ -1,0 +1,40 @@
+<!-- 内容 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>个人中心</title>
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/maincontent.css">
+    <link rel="stylesheet" href="css/bottom.css">
+    <link rel="stylesheet" type="text/css" href="css/noticeA.css" />
+    <script src="lib/jquery-2.1.4.min.js"></script>
+</head>
+
+<body ng-controller="personalCtrl">
+    <!-- 头部 -->
+    <div id="framecontentTop">
+        <div class="header">
+            <a ui-sref="index"><img id="img1" src="images/common/back.png" alt=""></a>
+            <span class="title">社区公告</span>
+            <div class="triangle"></div>
+        </div>
+    </div>
+    <!-- 内容 -->
+    <div id="maincontent" class="container" ng-controller="announceCtrl">
+        <table class="notice" ng-repeat="x in announce" ng-click="deliver($index)">
+            <tr>
+                <td rowspan="2" class="announcephoto"><img class="" src="{{x.img}}" /></td>
+                <td class="announcetitle">{{x.title}}</td>
+            </tr>
+            <tr>
+                <td class="date">{{x.dateTime}}</td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+@charset "UTF-8";
+body,ul,li,p,form,img,div,input{margin:0;padding:0;
+    font-family: Microsoft YaHei,sans-serif;}
+.topic{
+    background-color: #2b8de5;
+    height: 55px;
+    width: 100%;
+    position: fixed;
+    top:3px;
+    left:0px;
+}
+.topic img{
+    float: left;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    height: 30px;
+    width: 30px;
+}
+.topic p{
+    text-align: center;
+    font-size: 22px;
+    line-height: 55px;
+    color: #ffffff;
+}
+#list{
+    border-top: 10px solid #f4f4f4;
+    border-bottom: 10px solid #f4f4f4;
+    margin-top: 58px;
+}
+#list li{
+    list-style: none;
+    border-bottom: 1px solid #a0a0a0;
+    height:48px;
+    line-height:48px;
+    padding-left: 10px;
+}
+.shop{
+    font:bold 25px "SimHei";
+}
+.goods,.deliver{
+    font-size: 21px;
+}
+.disc{
+    font-size: 19px;
+    color:#7f7d7d;
+}
+.disc img{
+    width:25px;
+    margin:12px 10px 0 0;
+    float:left;
+}
+.min,.add{
+    height:34px;
+    margin-bottom: -10px;
+    margin-right: 6px;
+}
+.pri{
+    float:right;
+    margin-right: 25px;
+}
+.redpri{
+    color:red;
+    font-size:21px;
+}
+.total{
+    font-size:17px;
+}
+.address{
+    height:88px;
+    width:100%;
+    background:white;
+    padding:18px 25px;
+    font-size:21px;
+    border-bottom:1px solid #7d7d7d;
+}
+#addre{
+    margin-top: 6px;
+    width:90%;
+    border-top:1px solid #7d7d7d;
+}
+#addre p{
+    font-size: 18px;
+    margin:6px;
+}
+.footer{
+    height:58px;
+    width:100%;
+    background:#c6e2fb;
+    position:fixed;
+    bottom:0px;
+    font-size:20px; 
+    line-height:60px;
+    padding-left: 15px;
+}
+#footer_r{
+    background:#2b8de5;
+    height:58px;
+    width:41%;
+    display:block;
+    float:right;
+    color:white;
+    font-size:21px;
+    padding-left:12px; 
+
+}
+

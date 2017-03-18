@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #f1f6fb;
+}
+.parent{
+    background-color: #ffffff;
+}
+.top{
+    width: 100%;
+    height: 20px;
+}
+.topic{
+    background-color: #2b8de5;
+    height: 55px;
+    width: 100%;
+    position: relative;
+}
+.topic img{
+    float: left;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    height: 30px;
+    width: 30px;
+}
+.topic p{
+    text-align: center;
+    font-size: 22px;
+    line-height: 55px;
+    font-family: Microsoft YaHei,sans-serif;
+    color: #ffffff;
+}
+.above{
+    margin-top: 15px;
+    height: 195px;
+    border-top: 1px solid #a0a0a0;
+    border-bottom: 1px solid #a0a0a0;
+    position: relative;
+    padding: 6px;
+    background-color: #ffffff;
+}
+.center{
+    height: 120px;
+    width: 90%;
+    padding: 20px 0px 0 30px;
+    border-top: 1px solid #b5b5b5;
+    border-bottom: 1px solid #b5b5b5;
+}
+.center span{
+    text-align: center;
+    line-height: 90px;
+    font-family: Microsoft YaHei,sans-serif;
+    font-size: 14px;
+    color: #373636;
+    font-weight: 500;
+}
+.center .picture{
+    position: relative;
+    top: 5px;
+    left: -15px;
+    float: left;
+    height: 90px;
+    width: 130px;
+    background-color: #eeeeee;
+}
+.picture img{
+     height: 90px;
+    width: 130px;
+}
+.service{
+    font-family: Microsoft YaHei,sans-serif;
+    font-size: 14px;
+    color: #5a5858;
+    font-weight: 100;
+    padding-bottom: 5px;
+}
+.deal button{
+    border: none;
+    display: block;
+    float: right;
+    font-family: Microsoft YaHei,sans-serif;
+    font-size: 14px;
+    color: #ffffff;
+    height: 18px;
+    width: 80px;
+    text-align: center;
+    line-height: 18px;
+    font-weight: 100;
+    background-color: #5eadf3;
+    border-radius: 6px;
+    position: absolute;
+    top: 6px;
+    right: 25px;
+}
+.bottom{
+    padding: 8px 0 5px 10px;
+    font-family: Microsoft YaHei,sans-serif;
+    font-size: 14px;
+    color: #5a5858;
+    font-weight: 400;
+    position: relative;
+}
+.delete{
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 8px;
+}

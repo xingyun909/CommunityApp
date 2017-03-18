@@ -1,0 +1,195 @@
+/**
+ * 这里是书籍列表模块
+ * @type {[type]}
+ */
+var shopListModule = angular.module("ShopListModule", []);
+shopListModule.controller('ShopListCtrl',function ($scope,$http,$state,$stateParams) {
+    var shopData = [
+            {
+                "shopName": "UI海鲜",
+                "shopImg": "url",
+                "monthlySales": "224",
+                "activity": "购买满260元以上，8折优惠",
+                "qiSong": "12",
+                "peiSong": "3"
+            },
+             {
+                "shopName": "UI水果",
+                "shopImg": "url",
+                "monthlySales": "634",
+                "activity": "购买满230元以上，8折优惠",
+                "qiSong": "12",
+                "peiSong": "3"
+            },
+            {
+                "shopName": "米奇蛋糕店",
+                "shopImg": "url",
+                "monthlySales": "1234",
+                "activity": "购买满250元以上，8折优惠",
+                "qiSong": "30",
+                "peiSong": "5"
+            }
+
+        ]
+        ;
+        $scope.shopData = shopData;
+        console.log("in controller");
+        console.log(shopData);
+        console.log($scope.shopData);
+});
+
+var repairListModule = angular.module("RepairListModule", []);
+repairListModule.controller('repairListCtrl',function ($scope,$http,$state,$stateParams) {
+    // var repairData = [
+    //         {
+    //             "id":1,
+    //             "type": "维修服务",
+    //             "repairImg": "url",
+    //             "repairMsg":"卧室灯坏了，请速派人来修",
+    //             "dateTime":"2016-05-12 14:33",
+    //             "state":"等待处理"
+    //         },
+    //         {
+    //             "id":2,
+    //             "type": "维修服务",
+    //             "repairImg": "url",
+    //             "repairMsg":"卧室灯坏了，请速派人来修",
+    //             "dateTime":"2016-05-12 14:33",
+    //             "state":"等待处理"
+    //         },
+    //         {
+    //             "id":3,
+    //             "type": "维修服务",
+    //             "repairImg": "url",
+    //             "repairMsg":"楼道灯坏了，请速派人来修",
+    //             "dateTime":"2016-04-45 13:54",
+    //             "state":"等待处理"
+    //         }
+             
+
+    //     ]
+    //     ;
+    //     $scope.repairData = repairData;
+    //     console.log("in controller");
+    //     console.log(repairData);
+    //     console.log($scope.repairData);
+
+         $http.get('http://127.0.0.1/userAPP/data/books0.json')
+                    .success(function(largeLoad) {
+                        var data =largeLoad ;
+                        console.log(data);
+                        $scope.repairData = data;
+                    });
+        //  $http.get("http://www.runoob.com/try/angularjs/data/Customers_JSON.php")
+        // .success(function(response) {console.log(response)});
+});
+
+// bookListModule.controller('BookListCtrl', function($scope, $http, $state, $stateParams) {
+//     $scope.filterOptions = {
+//         filterText: "",
+//         useExternalFilter: true
+//     };
+//     $scope.totalServerItems = 0;
+//     $scope.pagingOptions = {
+//         pageSizes: [5, 10, 20],
+//         pageSize: 5,
+//         currentPage: 1
+//     };
+//     $scope.setPagingData = function(data, page, pageSize) {
+//         var pagedData = data.slice((page - 1) * pageSize, page * pageSize);
+//         $scope.books = pagedData;
+//         $scope.totalServerItems = data.length;
+//         if (!$scope.$$phase) {
+//             $scope.$apply();
+//         }
+//     };
+
+//     //这里可以根据路由上传递过来的bookType参数加载不同的数据
+//     console.log($stateParams);
+//     $scope.getPagedDataAsync = function(pageSize, page, searchText) {
+//         setTimeout(function() {
+//             var data;
+//             if (searchText) {
+//                 var ft = searchText.toLowerCase();
+//                 $http.get('../data/books' + $stateParams.bookType + '.json')
+//                     .success(function(largeLoad) {
+//                         data = largeLoad.filter(function(item) {
+//                             return JSON.stringify(item).toLowerCase().indexOf(ft) != -1;
+//                         });
+//                         $scope.setPagingData(data, page, pageSize);
+//                     });
+//             } else {
+//                 $http.get('../data/books' + $stateParams.bookType + '.json')
+//                     .success(function(largeLoad) {
+//                         $scope.setPagingData(largeLoad, page, pageSize);
+//                     });
+//             }
+//         }, 100);
+//     };
+
+//     $scope.getPagedDataAsync($scope.pagingOptions.pageSize, $scope.pagingOptions.currentPage);
+
+//     $scope.$watch('pagingOptions', function(newVal, oldVal) {
+//         if (newVal !== oldVal && newVal.currentPage !== oldVal.currentPage) {
+//             $scope.getPagedDataAsync($scope.pagingOptions.pageSize, $scope.pagingOptions.currentPage, $scope.filterOptions.filterText);
+//         }
+//     }, true);
+//     $scope.$watch('filterOptions', function(newVal, oldVal) {
+//         if (newVal !== oldVal) {
+//             $scope.getPagedDataAsync($scope.pagingOptions.pageSize, $scope.pagingOptions.currentPage, $scope.filterOptions.filterText);
+//         }
+//     }, true);
+
+//     $scope.gridOptions = {
+//         data: 'books',
+//         rowTemplate: '<div style="height: 100%"><div ng-style="{ \'cursor\': row.cursor }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngCell ">' +
+//             '<div class="ngVerticalBar" ng-style="{height: rowHeight}" ng-class="{ ngVerticalBarVisible: !$last }"> </div>' +
+//             '<div ng-cell></div>' +
+//             '</div></div>',
+//         multiSelect: false,
+//         enableCellSelection: true,
+//         enableRowSelection: false,
+//         enableCellEdit: true,
+//         enablePinning: true,
+//         columnDefs: [{
+//             field: 'index',
+//             displayName: '序号',
+//             width: 60,
+//             pinnable: false,
+//             sortable: false
+//         }, {
+//             field: 'name',
+//             displayName: '书名',
+//             enableCellEdit: true
+//         }, {
+//             field: 'author',
+//             displayName: '作者',
+//             enableCellEdit: true,
+//             width: 220
+//         }, {
+//             field: 'pubTime',
+//             displayName: '出版日期',
+//             enableCellEdit: true,
+//             width: 120
+//         }, {
+//             field: 'price',
+//             displayName: '定价',
+//             enableCellEdit: true,
+//             width: 120,
+//             cellFilter: 'currency:"￥"'
+//         }, {
+//             field: 'bookId',
+//             displayName: '操作',
+//             enableCellEdit: false,
+//             sortable: false,
+//             pinnable: false,
+//             cellTemplate: '<div><a ui-sref="bookdetail({bookId:row.getProperty(col.field)})" id="{{row.getProperty(col.field)}}">详情</a></div>'
+//         }],
+//         enablePaging: true,
+//         showFooter: true,
+//         totalServerItems: 'totalServerItems',
+//         pagingOptions: $scope.pagingOptions,
+//         filterOptions: $scope.filterOptions
+//     };
+// });
+

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"></meta>
+    <link rel="stylesheet" href="css/baoxiu-history.css" type="text/css"/>
+     <script src="lib/dropload.min.js"></script>
+    <title>历史报修</title>
+</head>
+<body>
+    <div id="parent">
+        <div class="header">
+            <!-- <div class="top"></div> -->
+            <div class="topic">
+                <a href="#"><img src="images/baoxiu/return-icon.png" alt=""/></a>
+                <p>历史报修</p>
+            </div>
+        </div>
+        <div class="body" id="body" ng-controller="repairListCtrl"> 
+            <div class="above" ng-repeat="repair in repairData">
+                    <div class="service">
+                        <span>{{$index+1}}</span>
+                        <span>{{repair.type}}</span>
+                    </div>
+                    <div class="deal"><button>{{repair.state}}</button><span></span></div>
+                <div class="center">
+                    <div class="picture"><img ng-src={{repair.repairImg}} alt=""></div>
+                    <span>{{repair.repairMsg}}</span>
+                </div>
+                <div class="bottom">
+                    <div>
+                        <span>2016-05-18&nbsp;&nbsp;14:20</span>
+                        <span class="delete">取消订单</span>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>
