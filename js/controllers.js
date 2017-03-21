@@ -1,20 +1,13 @@
 /**
- * 这里模块
- * @type {[type]}
- */
-
-
-
-/**
  * 
  * 
  *主页模块
  *
  */
 var indextModule = angular.module("IndextModule", []);
-indextModule.controller('indexCtrl', function($rootScope, $scope, $http, $state, $stateParams, dalog, $location, Title) {
+indextModule.controller('indexCtrl', function ($rootScope, $scope, $http, $state, $stateParams, dalog, $location, Title) {
     console.log("主页控制器");
-    $('.nav a').bind('click', function(event) {
+    $('.nav a').bind('click', function (event) {
         console.log("is click");
         var title = $(this).has('p').text();
         Title.pre($(this), title, $(this).attr('name'));
@@ -23,53 +16,53 @@ indextModule.controller('indexCtrl', function($rootScope, $scope, $http, $state,
     });
 
 });
-indextModule.controller('allCtrl', function($rootScope, $scope, $http, $state, $stateParams, dalog, $location, Title) {
+indextModule.controller('allCtrl', function ($rootScope, $scope, $http, $state, $stateParams, dalog, $location, Title) {
     console.log("验证控制器");
-    $scope.check = function(next) { //验证成功后
+    $scope.check = function (next) { //验证成功后
         console.log("进入验证用户");
         // dalog.texts('进入验证用户');
         var callback = {
-                success: function(data) { //data Ajax成功的数据
-                    console.log(data);
-                    if (data.state == 'true') {
-                        // $state.go("noticeA");
-                        console.log(data.phone);
-                        $rootScope.phone = data.phone;
-                        $rootScope.xiaoqu = data.xiaoqu;
-                        $rootScope.name = data.name;
-                        if (data.sex == "M") {
-                            $rootScope.sex = "男";
-                        } else if (data.sex == "F") {
-                            $rootScope.sex = "女";
-                        };
-                        $rootScope.IDCardNumber = data.IDCardNumber;
-                        $rootScope.address = data.xiaoqu + data.addressdong + data.addressdanyuan;
-                        $state.go(next);
-                    }
-                    if (data.state == "false") {
-                        console.log("请登录");
-                        dalog.texts('您尚未登录,请先登录');
-                        $state.go('login');
-                    }
-                },
-                fail: function() { // Ajax成失败
-
+            success: function (data) { //data Ajax成功的数据
+                console.log(data);
+                if (data.state == 'true') {
+                    // $state.go("noticeA");
+                    console.log(data.phone);
+                    $rootScope.phone = data.phone;
+                    $rootScope.xiaoqu = data.xiaoqu;
+                    $rootScope.name = data.name;
+                    if (data.sex == "M") {
+                        $rootScope.sex = "男";
+                    } else if (data.sex == "F") {
+                        $rootScope.sex = "女";
+                    };
+                    $rootScope.IDCardNumber = data.IDCardNumber;
+                    $rootScope.address = data.xiaoqu + data.addressdong + data.addressdanyuan;
+                    $state.go(next);
                 }
+                if (data.state == "false") {
+                    console.log("请登录");
+                    dalog.texts('您尚未登录,请先登录');
+                    $state.go('login');
+                }
+            },
+            fail: function () { // Ajax成失败
+
             }
-            // $state.go(next);
-        myAjax('/api/account/islogined', "", 'GET', callback);
+        }
+        // $state.go(next);
+        myAjax('http://rap.taobao.org/mockjs/15555/api/account/islogined', "", 'GET', callback);
     }
 
 });
 
-indextModule.controller('waitCtrl', function($scope, $http, $state, $stateParams, dalog, $location, Title) {
+indextModule.controller('waitCtrl', function ($scope, $http, $state, $stateParams, dalog, $location, Title) {
     console.log("等待开发控制器");
     dalog.texts('此功能正在开发中');
     Title.back($('.header img'));
 
 });
 
-indextModule.controller('404Ctrl', function($scope, $http, $state, $stateParams) {
+indextModule.controller('404Ctrl', function ($scope, $http, $state, $stateParams) {
     // console.log("404控制器");
 
 });
@@ -83,29 +76,29 @@ indextModule.controller('404Ctrl', function($scope, $http, $state, $stateParams)
  */
 var shopListModule = angular.module("ShopListModule", []);
 // 商店主页控制器
-shopListModule.controller('ShopListCtrl', function($scope, $http, $state, $stateParams) {
+shopListModule.controller('ShopListCtrl', function ($scope, $http, $state, $stateParams) {
     var shopData = [{
-            "shopName": "二哥超市",
-            "shopImg": "/userAPP/images/shop_main/timg.jpg",
-            "monthlySales": "224",
-            "activity": "满30立减20",
-            "qiSong": "10",
-            "peiSong": "1"
-        }, {
-            "shopName": "UI水果",
-            "shopImg": "url",
-            "monthlySales": "634",
-            "activity": "购买满230元以上，8折优惠",
-            "qiSong": "12",
-            "peiSong": "3"
-        }, {
-            "shopName": "米奇蛋糕店",
-            "shopImg": "url",
-            "monthlySales": "1234",
-            "activity": "购买满250元以上，8折优惠",
-            "qiSong": "30",
-            "peiSong": "5"
-        }
+        "shopName": "二哥超市",
+        "shopImg": "/userAPP/images/shop_main/timg.jpg",
+        "monthlySales": "224",
+        "activity": "满30立减20",
+        "qiSong": "10",
+        "peiSong": "1"
+    }, {
+        "shopName": "UI水果",
+        "shopImg": "url",
+        "monthlySales": "634",
+        "activity": "购买满230元以上，8折优惠",
+        "qiSong": "12",
+        "peiSong": "3"
+    }, {
+        "shopName": "米奇蛋糕店",
+        "shopImg": "url",
+        "monthlySales": "1234",
+        "activity": "购买满250元以上，8折优惠",
+        "qiSong": "30",
+        "peiSong": "5"
+    }
 
     ];
     $scope.shopData = shopData;
@@ -121,11 +114,11 @@ shopListModule.controller('ShopListCtrl', function($scope, $http, $state, $state
 
 });
 // 商店子页控制器
-shopListModule.controller('ShopsubListCtrl', function($scope, $http, $state, $stateParams) {
+shopListModule.controller('ShopsubListCtrl', function ($scope, $http, $state, $stateParams) {
 
-    $(function() {
+    $(function () {
         var offset = $("#end").offset();
-        $(".addcar").click(function(event) {
+        $(".addcar").click(function (event) {
             var addcar = $(this);
             var img = addcar.parent().find('.goods').attr('src');
             var flyer = $('< img class="u-flyer" src="' + img + '">');
@@ -140,7 +133,7 @@ shopListModule.controller('ShopsubListCtrl', function($scope, $http, $state, $st
                     width: 0,
                     height: 0
                 },
-                onEnd: function() {
+                onEnd: function () {
                     $("#shopcarnum").show();
                     var cn = $("#shopcarnum");
                     cn.html(parseInt(cn.html()) + 1);
@@ -159,18 +152,18 @@ shopListModule.controller('ShopsubListCtrl', function($scope, $http, $state, $st
  *
  */
 var repairListModule = angular.module("RepairListModule", []);
-repairListModule.controller('repairListCtrl', function($rootScope, $scope, $http, $state, $stateParams, $location, Title) {
+repairListModule.controller('repairListCtrl', function ($rootScope, $scope, $http, $state, $stateParams, $location, Title) {
     Title.back($('.header img'));
 
     function getData(url, element) { //element 滑动的元素 
         // 第一次请页面请求历史报修数据3条
         $http.get(url)
-            .success(function(largeLoad) {
+            .success(function (largeLoad) {
                 var data = largeLoad;
                 console.log(data);
                 $scope.repairData = data; //绑定获取的数据到全局$scope上
             });
-        $(function() {
+        $(function () {
 
             $('#element').dropload({
                 scrollArea: window,
@@ -182,18 +175,18 @@ repairListModule.controller('repairListCtrl', function($rootScope, $scope, $http
                 },
                 autoLoad: false,
 
-                loadDownFn: function(me) {
+                loadDownFn: function (me) {
 
                     // $http.get('/userAPP/data/books1.json')//刷新请求后台报修历史数据
                     $http.get('/api/repair/history') //刷新请求后台报修历史数据
 
-                    .success(function(largeLoad) {
-                        var data = largeLoad;
-                        console.log(data);
-                        $scope.repairData = $scope.repairData.concat(data);
-                        // $scope.scopeData  = $scope.scopeData.concat(data);
-                        console.log($scope.scopeData);
-                    });
+                        .success(function (largeLoad) {
+                            var data = largeLoad;
+                            console.log(data);
+                            $scope.repairData = $scope.repairData.concat(data);
+                            // $scope.scopeData  = $scope.scopeData.concat(data);
+                            console.log($scope.scopeData);
+                        });
 
                 }
             });
@@ -204,17 +197,17 @@ repairListModule.controller('repairListCtrl', function($rootScope, $scope, $http
     getData('/api/repair/history', "body");
 
 });
-repairListModule.controller("applyCtrl", function($rootScope, $scope, $http, $state, $stateParams, dalog, $location, Title) {
+repairListModule.controller("applyCtrl", function ($rootScope, $scope, $http, $state, $stateParams, dalog, $location, Title) {
     // dalog.texts("applyCtrl");
 
-    $("#formid").submit(function() {
+    $("#formid").submit(function () {
         // alert("submit"); 
         dalog.texts("正在提交，请等待");
         $("#formid").ajaxSubmit({
             type: "post", //提交方式  
             dataType: "json", //数据类型  
             url: "/api/repair/send", //请求url  
-            success: function(data) { //提交成功的回调函数  
+            success: function (data) { //提交成功的回调函数  
                 console.log(data);
                 if (data.type == "success") {
                     dalog.texts("提交成功，请耐心等待处理结果");
@@ -232,7 +225,7 @@ repairListModule.controller("applyCtrl", function($rootScope, $scope, $http, $st
 
     //清空表单
     function clearForm(form) {
-        $(':input', form).each(function() {
+        $(':input', form).each(function () {
             var type = this.type;
             var tag = this.tagName.toLowerCase(); // normalize case
             if (type == 'text' || type == 'password' || tag == 'textarea')
@@ -263,17 +256,17 @@ repairListModule.controller("applyCtrl", function($rootScope, $scope, $http, $st
  *
  */
 var app = angular.module('announceApp', []);
-app.controller('announceCtrl', function($rootScope, $scope, $http, $state, $stateParams, $location, Title) {
+app.controller('announceCtrl', function ($rootScope, $scope, $http, $state, $stateParams, $location, Title) {
     console.log($scope.title);
     console.log($scope.last_url);
     Title.back($('.header img'));
-    $http.get('/api/announce/getannounces')
-        .success(function(largeLoad) {
+    $http.get('http://rap.taobao.org/mockjs/15555/api/announce/getannounces')
+        .success(function (largeLoad) {
             var data = largeLoad;
             console.log(data);
             $scope.announce = data; //绑定获取的数据到全局$scope上
         });
-    $scope.deliver = function(index) {
+    $scope.deliver = function (index) {
         console.log("ok");
         console.log(index);
         Title.pre($(this), '公告详情', 'noticeC');
@@ -283,7 +276,7 @@ app.controller('announceCtrl', function($rootScope, $scope, $http, $state, $stat
 
 
 });
-app.controller('DetailCtrl', function($rootScope, $scope, $http, $state, $stateParams, $location, Title) {
+app.controller('DetailCtrl', function ($rootScope, $scope, $http, $state, $stateParams, $location, Title) {
     console.log('DetailCtrl');
     Title.back($('.header img'));
 
@@ -297,7 +290,7 @@ app.controller('DetailCtrl', function($rootScope, $scope, $http, $state, $stateP
  */
 var loginModule = angular.module("loginListModule", []);
 //注册控制器
-loginModule.controller('regCtrl', function($scope, $http, $state, $stateParams, dalog) {
+loginModule.controller('regCtrl', function ($scope, $http, $state, $stateParams, dalog) {
 
     console.log("regCtrl 控制器");
     //错误提示
@@ -309,7 +302,7 @@ loginModule.controller('regCtrl', function($scope, $http, $state, $stateParams, 
     function changeCode() {
         $('#img').attr({ src: "/api/account/regimgcode?" + (Math.random() * 100).toFixed(0) });
     }
-    $('#img').click(function(event) {
+    $('#img').click(function (event) {
         var url = "/api/account/regimgcode?" + (Math.random() * 100).toFixed(0);
         $(this).attr({ src: url });
     });
@@ -364,7 +357,7 @@ loginModule.controller('regCtrl', function($scope, $http, $state, $stateParams, 
         return checkPhone(account, pass);
     }
     //获取手机短信验证码   
-    $scope.getCode = function() {
+    $scope.getCode = function () {
         console.log("begin getCode");
         var user = getData();
         var type = "POST",
@@ -374,14 +367,14 @@ loginModule.controller('regCtrl', function($scope, $http, $state, $stateParams, 
         //图片验证码
         function tuCode() {
             var data = {
-                    phone: user.phone,
-                    code: user.code
-                },
+                phone: user.phone,
+                code: user.code
+            },
                 result = "";
             console.log(data);
 
             var callback = {
-                success: function(d) {
+                success: function (d) {
                     console.log(d);
                     if (d.type == "success") {
                         result = "ture";
@@ -419,7 +412,7 @@ loginModule.controller('regCtrl', function($scope, $http, $state, $stateParams, 
                         }
                     }
                 },
-                fail: function() {
+                fail: function () {
                     console.log("error");
                     dalog.texts('请求失败');
                 }
@@ -435,48 +428,48 @@ loginModule.controller('regCtrl', function($scope, $http, $state, $stateParams, 
         }
 
         var callback = {
-                success: function(d) {
-                    console.log("success");
-                    console.log(d);
-                    if (d.type == "success") {
-                        console.log("短信验证码发送成功");
-                        dalog.texts("短信验证码发送成功");
+            success: function (d) {
+                console.log("success");
+                console.log(d);
+                if (d.type == "success") {
+                    console.log("短信验证码发送成功");
+                    dalog.texts("短信验证码发送成功");
 
-                    } else if (d.type == "failure") {
+                } else if (d.type == "failure") {
 
 
-                        if (d.reason == "phone exist") {
-                            dalog.texts("手机已经注册");
-                        }
-
+                    if (d.reason == "phone exist") {
+                        dalog.texts("手机已经注册");
                     }
-                    // var InterValObj;
-                    // var count = 30;
-                    // var curCount;
-                    // curCount = count;
-                    // $("#getCode").attr("disabled", "true");
-                    // $("#getCode").html(curCount + "秒重新获取");
-                    // InterValObj = window.setInterval(SetRemainTime, 1000);
-
-                    // function SetRemainTime() {
-                    //     if (curCount == 0) {
-                    //         window.clearInterval(InterValObj);
-                    //         $("#getCode").removeAttr("disabled");
-                    //         $("#getCode").html("重新发送验证码");
-                    //     } else {
-                    //         curCount--;
-                    //         $("#getCode").html(+curCount + "秒重新获取");
-                    //     }
-                    // }
-
-                },
-                fail: function() {
-                    console.log("error");
-                    dalog.texts('请求失败');
 
                 }
+                // var InterValObj;
+                // var count = 30;
+                // var curCount;
+                // curCount = count;
+                // $("#getCode").attr("disabled", "true");
+                // $("#getCode").html(curCount + "秒重新获取");
+                // InterValObj = window.setInterval(SetRemainTime, 1000);
+
+                // function SetRemainTime() {
+                //     if (curCount == 0) {
+                //         window.clearInterval(InterValObj);
+                //         $("#getCode").removeAttr("disabled");
+                //         $("#getCode").html("重新发送验证码");
+                //     } else {
+                //         curCount--;
+                //         $("#getCode").html(+curCount + "秒重新获取");
+                //     }
+                // }
+
+            },
+            fail: function () {
+                console.log("error");
+                dalog.texts('请求失败');
+
             }
-            //发送手机短信
+        }
+        //发送手机短信
         if (tuCode() == "ture") {
             //图片验证码正确
             if (checkUser(user.phone) != "fail") {
@@ -488,7 +481,7 @@ loginModule.controller('regCtrl', function($scope, $http, $state, $stateParams, 
     }
 
     //注册
-    $scope.register = function() {
+    $scope.register = function () {
         console.log("begin register");
         var user = getData();
         var type = "POST",
@@ -499,7 +492,7 @@ loginModule.controller('regCtrl', function($scope, $http, $state, $stateParams, 
             };
         console.log(data);
         var callback = {
-            success: function(d) {
+            success: function (d) {
                 console.log("success");
                 console.log(d);
                 $scope.$apply();
@@ -518,7 +511,7 @@ loginModule.controller('regCtrl', function($scope, $http, $state, $stateParams, 
                 }
 
             },
-            fail: function() {
+            fail: function () {
                 console.log("error");
                 dalog.texts('请求失败');
             }
@@ -544,7 +537,7 @@ loginModule.controller('regCtrl', function($scope, $http, $state, $stateParams, 
 
 });
 //登陆控制器
-loginModule.controller('loginCtrl', function($scope, $http, $state, $stateParams, dalog) {
+loginModule.controller('loginCtrl', function ($scope, $http, $state, $stateParams, dalog) {
     console.log("loginCtrl");
     //获取提交数据
     function getData() {
@@ -588,13 +581,13 @@ loginModule.controller('loginCtrl', function($scope, $http, $state, $stateParams
 
         return checkPhone(account, pass);
     }
-    $('.login').click(function(event) {
+    $('.login').click(function (event) {
         var data = getData();
         console.log(data);
         var account = data.phone;
         var pass = data.pwd;
         var callback = {
-            success: function(data) { //data Ajax成功的数据
+            success: function (data) { //data Ajax成功的数据
                 console.log(data);
                 if (data.type == 'success') {
                     console.log("登录成功");
@@ -611,7 +604,7 @@ loginModule.controller('loginCtrl', function($scope, $http, $state, $stateParams
                     }
                 }
             },
-            fail: function() { // Ajax成失败
+            fail: function () { // Ajax成失败
                 console.log("请求失败");
                 dalog.texts('请求失败');
             }
@@ -636,10 +629,10 @@ loginModule.controller('loginCtrl', function($scope, $http, $state, $stateParams
  *
  */
 var personalModule = angular.module("personalModule", []);
-personalModule.controller('personalCtrl', function($rootScope, $scope, $http, $state, $stateParams, $location, Title) {
+personalModule.controller('personalCtrl', function ($rootScope, $scope, $http, $state, $stateParams, $location, Title) {
     console.log('personalCtrl');
-    $(function() {
-        $('.maintop').click(function() {
+    $(function () {
+        $('.maintop').click(function () {
             $('.maintop').css("background", "#cccaca");
         });
     })
@@ -651,24 +644,24 @@ personalModule.controller('personalCtrl', function($rootScope, $scope, $http, $s
 
 
 });
-personalModule.controller('fill_personalCtrl', function($rootScope, $scope, $http, $state, $stateParams, $location, Title, dalog) {
-    $(function() {
-        $('.xiaoqu').click(function() {
+personalModule.controller('fill_personalCtrl', function ($rootScope, $scope, $http, $state, $stateParams, $location, Title, dalog) {
+    $(function () {
+        $('.xiaoqu').click(function () {
             $('.alqu').show();
-            $(".alqu li").click(function() {
+            $(".alqu li").click(function () {
                 $(this).addClass('bian').siblings().removeClass('bian');
             });
-            $(".yes").click(function() {
+            $(".yes").click(function () {
                 $('.xqu').val($('.bian').html());
                 $('.alqu').hide();
             });
-            $(".no").click(function() {
+            $(".no").click(function () {
                 $('.alqu').hide();
             });
         });
-        $('.addre').click(function() {
+        $('.addre').click(function () {
             $('.aladdre').show();
-            $(".yes").click(function() {
+            $(".yes").click(function () {
                 if (($('.ad1').val()) && ($('.ad2').val()) && ($('.ad3').val()) != "") {
                     var address = $('.ad1').val() + '栋 ' + $('.ad2').val() + '单元 ' + $('.ad3').val() + '室 ';
                     $('.adr').val(address);
@@ -676,7 +669,7 @@ personalModule.controller('fill_personalCtrl', function($rootScope, $scope, $htt
                 $('.aladdre').hide();
 
             });
-            $(".no").click(function() {
+            $(".no").click(function () {
                 $('.aladdre').hide();
             });
         });
@@ -684,7 +677,7 @@ personalModule.controller('fill_personalCtrl', function($rootScope, $scope, $htt
     })
 
     // 提交
-    $scope.send = function() {
+    $scope.send = function () {
         // alert("submit");
         dalog.texts("正在提交，请等待");
         console.log($("input[name |='sex']").val());
@@ -698,12 +691,12 @@ personalModule.controller('fill_personalCtrl', function($rootScope, $scope, $htt
             type: "post", //提交方式  
             dataType: "json", //数据类型  
             url: "/api/account/userex", //请求url  
-            success: function(data) { //提交成功的回调函数  
+            success: function (data) { //提交成功的回调函数  
                 console.log(data);
                 if (data.type == "success") {
                     dalog.texts("修改成功");
                     var callback = {
-                        success: function(data) { //data Ajax成功的数据
+                        success: function (data) { //data Ajax成功的数据
                             console.log(data);
                             if (data.state == 'true') {
                                 console.log(data.phone);
@@ -733,7 +726,7 @@ personalModule.controller('fill_personalCtrl', function($rootScope, $scope, $htt
 
 
 });
-personalModule.controller('shop_applyCtrl', function($rootScope, $scope, $http, $state, $stateParams, $location, Title) {
+personalModule.controller('shop_applyCtrl', function ($rootScope, $scope, $http, $state, $stateParams, $location, Title) {
 
     Title.back($('.header img'));
 
